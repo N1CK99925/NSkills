@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nskills.local/schemas/registry.schema.json",
+  "title": "NSkills registry",
+  "type": "object",
+  "required": ["schema_version", "capabilities"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "path",
+          "name",
+          "description",
+          "version",
+          "compatibility",
+          "depends",
+          "provenance"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "type": { "enum": ["skill", "workflow", "agent"] },
+          "path": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "version": { "type": "string" },
+          "compatibility": {
+            "type": "array",
+            "items": { "enum": ["opencode", "hermes", "freebuff", "generic"] }
+          },
+          "depends": {
+            "type": "object",
+            "properties": {
+              "skills": { "type": "array", "items": { "type": "string" } },
+              "agents": { "type": "array", "items": { "type": "string" } },
+              "tools": { "type": "array", "items": { "type": "string" } }
+            },
+            "additionalProperties": false
+          },
+          "provenance": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

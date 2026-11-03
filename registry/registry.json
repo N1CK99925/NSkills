@@ -1,0 +1,791 @@
+{
+  "schema_version": 1,
+  "capabilities": [
+    {
+      "id": "benchmark-checklist",
+      "type": "skill",
+      "path": "skills/benchmark-checklist",
+      "name": "Benchmark Checklist",
+      "description": "Vet a perf measurement (limiter, tuning, limits, errors, repeatability, relevance, and whether the work happened) before you report or act on it. Use when you run a benchmark or report a speedup or regression you measured.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:benchmark-checklist",
+      "tags": [
+        "performance",
+        "measurement"
+      ]
+    },
+    {
+      "id": "bro",
+      "type": "skill",
+      "path": "skills/bro",
+      "name": "Bro",
+      "description": "Restate the last message in plain human language, with no jargon. Use for /bro or when asked to say it plainly.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:bro",
+      "tags": [
+        "communication",
+        "plain-language"
+      ]
+    },
+    {
+      "id": "design-before-code",
+      "type": "skill",
+      "path": "skills/design-before-code",
+      "name": "Design Before Code",
+      "description": "Sketch usage, types, and module boundaries before writing code, then implement against the sketch and scrap it when reality disagrees.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "derived:pstack:architect",
+      "tags": [
+        "design",
+        "architecture",
+        "planning"
+      ]
+    },
+    {
+      "id": "deslop",
+      "type": "skill",
+      "path": "skills/deslop",
+      "name": "Deslop",
+      "description": "Remove AI-generated code slop and clean up code style",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:deslop",
+      "tags": [
+        "code-quality",
+        "cleanup",
+        "review"
+      ]
+    },
+    {
+      "id": "fix-ci",
+      "type": "skill",
+      "path": "skills/fix-ci",
+      "name": "Fix CI",
+      "description": "Find failing PR checks, inspect logs or external check links, and apply focused fixes",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": [
+          "git",
+          "gh"
+        ]
+      },
+      "provenance": "pstack:fix-ci",
+      "tags": [
+        "ci",
+        "github",
+        "debugging"
+      ]
+    },
+    {
+      "id": "fix-merge-conflicts",
+      "type": "skill",
+      "path": "skills/fix-merge-conflicts",
+      "name": "Fix Merge Conflicts",
+      "description": "Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": [
+          "git"
+        ]
+      },
+      "provenance": "pstack:fix-merge-conflicts",
+      "tags": [
+        "git",
+        "merge",
+        "verification"
+      ]
+    },
+    {
+      "id": "principle-boundary-discipline",
+      "type": "skill",
+      "path": "skills/principle-boundary-discipline",
+      "name": "Boundary Discipline",
+      "description": "Apply when wiring validation, error handling, or framework adapters. Concentrate guards at system boundaries (CLI, config, network, external APIs); trust internal types and keep business logic in pure functions.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-boundary-discipline",
+      "tags": [
+        "architecture",
+        "validation"
+      ]
+    },
+    {
+      "id": "principle-encode-lessons-in-structure",
+      "type": "skill",
+      "path": "skills/principle-encode-lessons-in-structure",
+      "name": "Encode Lessons in Structure",
+      "description": "Apply when you catch yourself writing the same instruction a second time, or notice a recurring correction. Encode the rule as a lint, metadata flag, runtime check, or script instead of more text.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-encode-lessons-in-structure",
+      "tags": [
+        "automation",
+        "tooling"
+      ]
+    },
+    {
+      "id": "principle-explain-the-number",
+      "type": "skill",
+      "path": "skills/principle-explain-the-number",
+      "name": "Explain the Number",
+      "description": "Apply before you measure, and before you trust, report, or act on a number you measured: a speedup, a regression, a throughput, a latency, or an eval result. Find what limits it, and rule out that it measured something other than the work you think.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [
+          "benchmark-checklist",
+          "principle-prove-it-works"
+        ],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-explain-the-number",
+      "tags": [
+        "measurement",
+        "performance"
+      ]
+    },
+    {
+      "id": "principle-fix-root-causes",
+      "type": "skill",
+      "path": "skills/principle-fix-root-causes",
+      "name": "Fix Root Causes",
+      "description": "Apply when debugging. Trace each symptom back to the first place the system went wrong and fix it there. A guard is a fix only when the state it handles is legitimate.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-fix-root-causes",
+      "tags": [
+        "debugging",
+        "root-cause"
+      ]
+    },
+    {
+      "id": "principle-guard-the-context-window",
+      "type": "skill",
+      "path": "skills/principle-guard-the-context-window",
+      "name": "Guard the Context Window",
+      "description": "Apply when context is filling up: large outputs, long files, repeated reads, fan-out planning. Route bulk to subagents; keep summaries in the main thread, not raw payloads.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-guard-the-context-window",
+      "tags": [
+        "context",
+        "reading"
+      ]
+    },
+    {
+      "id": "principle-laziness-protocol",
+      "type": "skill",
+      "path": "skills/principle-laziness-protocol",
+      "name": "Laziness Protocol",
+      "description": "Apply when refactoring, evaluating diff size, or tempted to add abstractions, layers, or signal threading. Bias toward deletion and the smallest change that solves the problem.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-laziness-protocol",
+      "tags": [
+        "minimal-change",
+        "refactoring"
+      ]
+    },
+    {
+      "id": "principle-minimize-reader-load",
+      "type": "skill",
+      "path": "skills/principle-minimize-reader-load",
+      "name": "Minimize Reader Load",
+      "description": "Apply when reviewing or shaping code that's hard to trace. Count layers between question and answer, and hidden state in the reader's head; collapse one-caller wrappers and shrink mutable scope.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [
+          "principle-guard-the-context-window"
+        ],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-minimize-reader-load",
+      "tags": [
+        "readability",
+        "design"
+      ]
+    },
+    {
+      "id": "principle-model-the-domain",
+      "type": "skill",
+      "path": "skills/principle-model-the-domain",
+      "name": "Model the Domain",
+      "description": "Apply when writing stateful logic, or when code branches a lot or repeats a shape assumption across files.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-model-the-domain",
+      "tags": [
+        "design",
+        "data-modeling"
+      ]
+    },
+    {
+      "id": "principle-prove-it-works",
+      "type": "skill",
+      "path": "skills/principle-prove-it-works",
+      "name": "Prove It Works",
+      "description": "Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-prove-it-works",
+      "tags": [
+        "verification",
+        "evidence"
+      ]
+    },
+    {
+      "id": "principle-sequence-verifiable-units",
+      "type": "skill",
+      "path": "skills/principle-sequence-verifiable-units",
+      "name": "Sequence Verifiable Units",
+      "description": "Apply to multi-step work (sweeps, migrations, runs of similar edits) and to how you stack commits and PRs. Break work into small units that each end in a verifiable state, check each before the next, and order delivery so the sequence proves itself to a reviewer.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-sequence-verifiable-units",
+      "tags": [
+        "planning",
+        "verification"
+      ]
+    },
+    {
+      "id": "principle-subtract-before-you-add",
+      "type": "skill",
+      "path": "skills/principle-subtract-before-you-add",
+      "name": "Subtract Before You Add",
+      "description": "Apply when sequencing an addition, refactor, or rewrite. Remove dead code, redundant validators, and stub references first, then build on the simpler base.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-subtract-before-you-add",
+      "tags": [
+        "refactoring",
+        "sequencing"
+      ]
+    },
+    {
+      "id": "principle-test-behavior-not-implementation",
+      "type": "skill",
+      "path": "skills/principle-test-behavior-not-implementation",
+      "name": "Test Behavior, Not Implementation",
+      "description": "Apply when you write, change, or keep a test. Assert what the code's users can observe, so that the test fails when that behavior breaks and keeps passing when only the internals change.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-test-behavior-not-implementation",
+      "tags": [
+        "testing",
+        "design"
+      ]
+    },
+    {
+      "id": "principle-type-system-discipline",
+      "type": "skill",
+      "path": "skills/principle-type-system-discipline",
+      "name": "Type System Discipline",
+      "description": "Apply when designing types, reviewing a function signature, or writing code in any statically-typed language. Make illegal states unrepresentable, brand semantic primitives, parse external data at boundaries, exhaust variants, derive from authoritative schemas.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:principle-type-system-discipline",
+      "tags": [
+        "types",
+        "design"
+      ]
+    },
+    {
+      "id": "sharpen",
+      "type": "skill",
+      "path": "skills/sharpen",
+      "name": "Sharpen",
+      "description": "Make a task deeper, not bigger, then rewrite the prompt. Use for /sharpen.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:sharpen",
+      "tags": [
+        "planning",
+        "prompting",
+        "depth"
+      ]
+    },
+    {
+      "id": "tdd",
+      "type": "skill",
+      "path": "skills/tdd",
+      "name": "Test-Driven Bug Fix",
+      "description": "Use only when the user explicitly asks for TDD, a failing test, or a regression test, OR when the bug has an obvious cheap local test target. Skip when the test path is unclear, expensive, integration-heavy, or not requested.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:tdd",
+      "tags": [
+        "testing",
+        "debugging",
+        "verification"
+      ]
+    },
+    {
+      "id": "technical-writing",
+      "type": "skill",
+      "path": "skills/technical-writing",
+      "name": "Technical Writing",
+      "description": "Layered technical-writing standard: Di\u00e1taxis structure, Google developer style sentences, STE instruction rules, Global English syntax. Use for /technical-writing or when writing or reviewing docs, RFCs, readmes, PR descriptions, or commit messages.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:technical-writing",
+      "tags": [
+        "writing",
+        "documentation",
+        "review"
+      ]
+    },
+    {
+      "id": "unslop",
+      "type": "skill",
+      "path": "skills/unslop",
+      "name": "Unslop",
+      "description": "Cut AI tells from any writing.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "pstack:unslop",
+      "tags": [
+        "writing",
+        "editing",
+        "prose"
+      ]
+    },
+    {
+      "id": "implementer",
+      "type": "agent",
+      "path": "agents/implementer",
+      "name": "Implementer",
+      "description": "Produce a design sketch and a verified implementation for one scoped request.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [
+          "design-before-code",
+          "tdd"
+        ],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "original",
+      "tags": [
+        "implementation",
+        "design",
+        "coding"
+      ]
+    },
+    {
+      "id": "researcher",
+      "type": "agent",
+      "path": "agents/researcher",
+      "name": "Researcher",
+      "description": "Answer one specific question from primary sources and return the evidence with file and line citations.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "original",
+      "tags": [
+        "research",
+        "investigation",
+        "evidence"
+      ]
+    },
+    {
+      "id": "reviewer",
+      "type": "agent",
+      "path": "agents/reviewer",
+      "name": "Reviewer",
+      "description": "Independently review a diff or design for correctness, scope, maintainability, and test quality.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [
+          "deslop",
+          "principle-test-behavior-not-implementation"
+        ],
+        "agents": [],
+        "tools": []
+      },
+      "provenance": "original",
+      "tags": [
+        "review",
+        "correctness",
+        "code-quality"
+      ]
+    },
+    {
+      "id": "fix-bug",
+      "type": "workflow",
+      "path": "workflows/fix-bug",
+      "name": "Fix Bug",
+      "description": "Reproduce a defect, find its root cause, fix it, and prove the fix with a regression test.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [
+          "tdd",
+          "principle-fix-root-causes",
+          "principle-prove-it-works",
+          "deslop"
+        ],
+        "agents": [
+          "implementer"
+        ],
+        "tools": []
+      },
+      "provenance": "original",
+      "tags": [
+        "bug",
+        "debugging",
+        "testing"
+      ]
+    },
+    {
+      "id": "implement-feature",
+      "type": "workflow",
+      "path": "workflows/implement-feature",
+      "name": "Implement Feature",
+      "description": "Take a feature request from framing through design, failing tests, implementation, and review.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [
+          "sharpen",
+          "design-before-code",
+          "tdd",
+          "principle-prove-it-works",
+          "principle-sequence-verifiable-units",
+          "technical-writing"
+        ],
+        "agents": [
+          "implementer",
+          "reviewer"
+        ],
+        "tools": []
+      },
+      "provenance": "original",
+      "tags": [
+        "feature",
+        "implementation",
+        "tdd"
+      ]
+    },
+    {
+      "id": "review-change",
+      "type": "workflow",
+      "path": "workflows/review-change",
+      "name": "Review Change",
+      "description": "Review a diff or branch for correctness, scope, maintainability, and test quality, then report findings by severity.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [
+          "deslop",
+          "unslop",
+          "technical-writing",
+          "principle-test-behavior-not-implementation",
+          "principle-boundary-discipline"
+        ],
+        "agents": [
+          "reviewer"
+        ],
+        "tools": []
+      },
+      "provenance": "original",
+      "tags": [
+        "review",
+        "code-quality",
+        "correctness"
+      ]
+    },
+    {
+      "id": "ship-pr",
+      "type": "workflow",
+      "path": "workflows/ship-pr",
+      "name": "Ship PR",
+      "description": "Drive a pull request from opened to mergeable, resolving checks and conflicts without hiding failures.",
+      "version": "0.1.0",
+      "compatibility": [
+        "opencode",
+        "hermes",
+        "freebuff",
+        "generic"
+      ],
+      "depends": {
+        "skills": [
+          "fix-ci",
+          "fix-merge-conflicts",
+          "principle-prove-it-works",
+          "technical-writing"
+        ],
+        "agents": [
+          "reviewer"
+        ],
+        "tools": [
+          "git"
+        ]
+      },
+      "provenance": "original",
+      "tags": [
+        "pr",
+        "ci",
+        "git",
+        "shipping"
+      ]
+    }
+  ]
+}

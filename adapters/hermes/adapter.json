@@ -1,0 +1,16 @@
+{
+  "name": "hermes",
+  "display_name": "Hermes Agent",
+  "status": "verified",
+  "verified_at": "2026-11-03",
+  "documentation": "https://github.com/NousResearch/hermes-agent",
+  "supports": { "skill": true, "workflow": true, "agent": true, "rule": false },
+  "preferred_mode": "copy",
+  "notes": [
+    "Skills install under $HERMES_HOME/skills/nskills/. Nested directories become categories.",
+    "Workflows install as skill bundles in $HERMES_HOME/skill-bundles/.",
+    "Agents install as loadable instruction skills because Hermes has no file-based agent registry.",
+    "Copies are the default because Hermes warns when a skill resolves outside its trusted skills directory through a symlink.",
+    "Rules are not installed."
+  ]
+}

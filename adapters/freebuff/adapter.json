@@ -1,0 +1,15 @@
+{
+  "name": "freebuff",
+  "display_name": "Freebuff",
+  "status": "partial",
+  "verified_at": "2026-11-03",
+  "documentation": "https://freebuff.com",
+  "supports": { "skill": true, "workflow": true, "agent": true, "rule": false },
+  "preferred_mode": "symlink",
+  "notes": [
+    "Freebuff uses the cross-tool Agent Skills convention in .agents/skills.",
+    "No local agent, command, or MCP configuration file was found in the distributed binary.",
+    "Workflows and agents render as generated skills.",
+    "Live-session loading was not verified in the audit environment."
+  ]
+}

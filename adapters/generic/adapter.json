@@ -1,0 +1,14 @@
+{
+  "name": "generic",
+  "display_name": "Generic Agent Skills",
+  "status": "verified",
+  "verified_at": "2026-11-03",
+  "documentation": "https://agentskills.io",
+  "supports": { "skill": true, "workflow": true, "agent": true, "rule": false },
+  "preferred_mode": "symlink",
+  "notes": [
+    "Uses the cross-tool .agents/skills convention for global and project installs.",
+    "Workflows and agents render as generated skills.",
+    "No host config is edited."
+  ]
+}

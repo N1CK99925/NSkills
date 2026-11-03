@@ -1,0 +1,15 @@
+{
+  "name": "opencode",
+  "display_name": "OpenCode",
+  "status": "verified",
+  "verified_at": "2026-11-03",
+  "documentation": "https://opencode.ai/v2/docs/skills/",
+  "supports": { "skill": true, "workflow": true, "agent": true, "rule": false },
+  "preferred_mode": "symlink",
+  "notes": [
+    "Skills are directories under skills/. The directory name is the ID.",
+    "Agents are markdown files under agents/ with YAML frontmatter.",
+    "Workflows render as a generated skill plus a command.",
+    "Rules are not installed because OpenCode instructions are global files."
+  ]
+}

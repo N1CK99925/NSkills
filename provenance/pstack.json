@@ -1,0 +1,149 @@
+{
+  "source": {
+    "repository": "https://github.com/michael-denyer/pstack-claude",
+    "commit": "513c0886b79abb04065293581a4ef7e70049e4f2",
+    "audited_at": "2026-11-03",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2026 Lauren Tan; portions Copyright (c) 2026 Cursor"
+  },
+  "imports": {
+    "unslop": {
+      "class": "port",
+      "target": "unslop",
+      "upstream_path": "plugins/pstack/skills/unslop",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "technical-writing": {
+      "class": "port",
+      "target": "technical-writing",
+      "upstream_path": "plugins/pstack/skills/technical-writing",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "tdd": {
+      "class": "port",
+      "target": "tdd",
+      "upstream_path": "plugins/pstack/skills/tdd",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "deslop": {
+      "class": "port",
+      "target": "deslop",
+      "upstream_path": "plugins/pstack/skills/deslop",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "fix-ci": {
+      "class": "port",
+      "target": "fix-ci",
+      "upstream_path": "plugins/pstack/skills/fix-ci",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "fix-merge-conflicts": {
+      "class": "port",
+      "target": "fix-merge-conflicts",
+      "upstream_path": "plugins/pstack/skills/fix-merge-conflicts",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "bro": {
+      "class": "port",
+      "target": "bro",
+      "upstream_path": "plugins/pstack/skills/bro",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "sharpen": {
+      "class": "port",
+      "target": "sharpen",
+      "upstream_path": "plugins/pstack/skills/sharpen",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-prove-it-works": {
+      "class": "port",
+      "target": "principle-prove-it-works",
+      "upstream_path": "plugins/pstack/skills/principle-prove-it-works",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-fix-root-causes": {
+      "class": "port",
+      "target": "principle-fix-root-causes",
+      "upstream_path": "plugins/pstack/skills/principle-fix-root-causes",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-laziness-protocol": {
+      "class": "port",
+      "target": "principle-laziness-protocol",
+      "upstream_path": "plugins/pstack/skills/principle-laziness-protocol",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-model-the-domain": {
+      "class": "port",
+      "target": "principle-model-the-domain",
+      "upstream_path": "plugins/pstack/skills/principle-model-the-domain",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-boundary-discipline": {
+      "class": "port",
+      "target": "principle-boundary-discipline",
+      "upstream_path": "plugins/pstack/skills/principle-boundary-discipline",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-type-system-discipline": {
+      "class": "port",
+      "target": "principle-type-system-discipline",
+      "upstream_path": "plugins/pstack/skills/principle-type-system-discipline",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-test-behavior-not-implementation": {
+      "class": "port",
+      "target": "principle-test-behavior-not-implementation",
+      "upstream_path": "plugins/pstack/skills/principle-test-behavior-not-implementation",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-encode-lessons-in-structure": {
+      "class": "port",
+      "target": "principle-encode-lessons-in-structure",
+      "upstream_path": "plugins/pstack/skills/principle-encode-lessons-in-structure",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-explain-the-number": {
+      "class": "port",
+      "target": "principle-explain-the-number",
+      "upstream_path": "plugins/pstack/skills/principle-explain-the-number",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-subtract-before-you-add": {
+      "class": "port",
+      "target": "principle-subtract-before-you-add",
+      "upstream_path": "plugins/pstack/skills/principle-subtract-before-you-add",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-sequence-verifiable-units": {
+      "class": "port",
+      "target": "principle-sequence-verifiable-units",
+      "upstream_path": "plugins/pstack/skills/principle-sequence-verifiable-units",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-minimize-reader-load": {
+      "class": "port",
+      "target": "principle-minimize-reader-load",
+      "upstream_path": "plugins/pstack/skills/principle-minimize-reader-load",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "benchmark-checklist": {
+      "class": "port",
+      "target": "benchmark-checklist",
+      "upstream_path": "plugins/pstack/skills/benchmark-checklist",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "principle-guard-the-context-window": {
+      "class": "port",
+      "target": "principle-guard-the-context-window",
+      "upstream_path": "plugins/pstack/skills/principle-guard-the-context-window",
+      "changes": "Frontmatter normalized; host coupling removed; sibling skill links rewritten to skill IDs."
+    },
+    "design-before-code": {
+      "class": "rewrite",
+      "target": "design-before-code",
+      "upstream_path": "plugins/pstack/skills/architect",
+      "changes": "Rewritten as a harness-neutral skill. Removed arena fan-out, model policy, runtime mappings, and phase links. Kept the ground/sketch/agree/implement/scrap loop. Ported references/design-red-flags.md verbatim."
+    }
+  }
+}
