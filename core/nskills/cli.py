@@ -419,7 +419,11 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("update", help="reinstall from the current repository")
     p.add_argument("ids", nargs="*")
     p.add_argument("--target")
-    p.add_argument("--force", action="store_true")
+    p.add_argument(
+        "--force",
+        action="store_true",
+        help="back up and replace paths modified outside nskills",
+    )
     p.set_defaults(func=cmd_update)
 
     p = sub.add_parser("doctor", help="check adapters, tools, and installs")

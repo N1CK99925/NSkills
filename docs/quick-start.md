@@ -97,7 +97,9 @@ python3 scripts/nskills update implement-feature --target opencode
 ```
 
 Symlinked installs already see the change; copies need `update`. `doctor`
-reports drift for copied files.
+reports drift for copied files. `update` refuses to overwrite a path modified
+outside NSkills unless `--force` is passed, in which case the old files are kept
+in a timestamped backup.
 
 ## 6. Remove an install
 

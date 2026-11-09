@@ -67,7 +67,7 @@ adapter writes.
 | `uninstall ID... --target T` | Remove a managed install; `--force` keeps modified files in a backup |
 | `sync` | Restore missing files for recorded installs without overwriting existing paths |
 | `update [ID...]` | Reinstall managed capabilities from the current repository |
-| `doctor` | Check adapters, required tools, missing paths, and drift |
+| `doctor` | Check adapters, required tools, missing paths, drift, and dependencies |
 | `validate [--write]` | Validate the repository and registry |
 | `registry build` | Rebuild `registry/registry.json` from the filesystem |
 | `targets` | Show adapters, support, detection, and global roots |
@@ -75,7 +75,8 @@ adapter writes.
 `install` and `uninstall` require `--target`. Use `--scope project` to write into
 the current directory (or `--project DIR`). `--copy` copies instead of linking;
 `--symlink` overrides an adapter that prefers copies. `--force` moves an
-unmanaged destination to a timestamped backup before replacing it.
+unmanaged destination or a locally modified managed path to a timestamped
+backup before replacing or removing it.
 
 ## Layout
 

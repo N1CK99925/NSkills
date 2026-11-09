@@ -109,6 +109,8 @@ Safety:
 - Uninstall removes only paths recorded for that install, and only when they
   still match the recorded ownership. A modified path requires `--force`, which
   keeps the removed files in a timestamped backup.
+- Reinstall and `update` also refuse to overwrite a managed path that changed
+  outside NSkills; `--force` replaces it and keeps the old files.
 - `sync` restores missing recorded paths only. It never overwrites an existing
   path, so local edits survive a repair.
 - State lives at `$XDG_STATE_HOME/nskills/state.json` (typically
